@@ -7,4 +7,6 @@ __pycache__/
 .venv/
 venv/
 ENV/
-uv.lock
+__init__.py
+*筛选结果.md
+*回测报告.md

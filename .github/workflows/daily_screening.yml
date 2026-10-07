@@ -1,0 +1,26 @@
+name: Daily Screening
+
+on:
+  schedule:
+    # 北京时间每天 10:00（UTC 02:00）
+    - cron: "0 2 * * *"
+  workflow_dispatch:  # 支持手动触发
+
+jobs:
+  screening:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: uv sync --no-dev
+
+      - name: Run daily screening
+        run: uv run python scripts/daily_screening.py
