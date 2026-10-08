@@ -8,7 +8,7 @@ on:
 
 jobs:
   screening:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     timeout-minutes: 20
     steps:
       - name: Checkout code
