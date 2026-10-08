@@ -23,7 +23,7 @@ curl -sL "https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}
 tar xzf runner.tar.gz
 
 # 配置并注册
-./bin/Config.sh \
+./config.sh \
   --url "https://github.com/${REPO}" \
   --token "${PAT}" \
   --work "work" \
